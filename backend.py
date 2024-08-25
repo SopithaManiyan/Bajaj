@@ -8,6 +8,7 @@ def home():
     return "Hello, World!"
 
 @app.route('/process', methods=['POST'])
+@app.route('/process', methods=['POST'])
 def process_data():
     input_data = request.json.get('input_data', [])
     num_list = [item for item in input_data if item.isdigit()]
@@ -28,6 +29,7 @@ def process_data():
         }
     }
     return jsonify(response)
+
 
 @app.route('/code', methods=['GET'])
 def get_code():
